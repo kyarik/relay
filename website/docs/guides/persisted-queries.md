@@ -162,7 +162,7 @@ perform the matching using the `matchQueryMiddleware` from [relay-compiler-plus]
 
 ```javascript
 import Express from 'express';
-import expressGraphql from 'express-graphql';
+import {graphqlHTTP} from 'express-graphql'
 import {matchQueryMiddleware} from 'relay-compiler-plus';
 import queryMapJson from './path/to/persisted-queries.json';
 
@@ -170,7 +170,7 @@ const app = Express();
 
 app.use('/graphql',
   matchQueryMiddleware(queryMapJson),
-  expressGraphl({schema}),
+  graphqlHTTP({schema}),
 );
 ```
 
