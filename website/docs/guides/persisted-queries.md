@@ -56,7 +56,6 @@ The `--persist-ouput` flag does 2 things:
       //... excluded for brevity
     };
     })();
-
     ```
 
     With `--persist-output <path>` this becomes:
@@ -73,7 +72,6 @@ The `--persist-ouput` flag does 2 things:
       //... excluded for brevity
     };
     })();
-
     ```
 
 2.  It generates a JSON file at the `<path>` you specify containing a mapping from query IDs
@@ -95,7 +93,7 @@ leading to the `queryMap.json` file exist.
 You'll need to modify your network layer fetch implementation to pass an ID parameter in the POST body (e.g., `doc_id`) instead of a query parameter:
 
 ```javascript
-function fetchQuery(operation, variables,) {
+function fetchQuery(operation, variables) {
   return fetch('/graphql', {
     method: 'POST',
     headers: {
@@ -172,7 +170,8 @@ const app = Express();
 
 app.use('/graphql',
   matchQueryMiddleware(queryMapJson),
-  expressGraphql({schema}));
+  expressGraphl({schema}),
+);
 ```
 
 ## Using `--persist-output` and `--watch`
