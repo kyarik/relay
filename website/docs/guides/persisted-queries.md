@@ -76,7 +76,7 @@ The `--persist-ouput` flag does 2 things:
 
     ```
 
-2.  It generates a JSON file at the `<path>` you specify containing a mapping from query ids
+2.  It generates a JSON file at the `<path>` you specify containing a mapping from query IDs
     to the corresponding operation texts.
 
 ```javascript
@@ -124,7 +124,7 @@ Your server should then look up the query referenced by `doc_id` when responding
 <OssOnly>
 
 To execute client requests that send persisted queries instead of query text, your server will need to be able
-to lookup the query text corresponding to each id. Typically this will involve saving the output of the `--persist-output <path>` JSON file to a database or some other storage mechanism, and retrieving the corresponding text for the ID specified by a client.
+to lookup the query text corresponding to each ID. Typically this will involve saving the output of the `--persist-output <path>` JSON file to a database or some other storage mechanism, and retrieving the corresponding text for the ID specified by a client.
 
 For universal applications where the client and server code are in one project, this is not an issue since you can place
 the query map file in a common location accessible to both the client and the server.
@@ -149,8 +149,8 @@ Some possibilities of what you can do in `./pushQueries.js`:
 
 ### Run time push
 
-A second more complex option is to push your query maps to the server at runtime, without the server knowing the query ids at the start.
-The client optimistically sends a query id to the server, which does not have the query map. The server then in turn requests
+A second more complex option is to push your query maps to the server at runtime, without the server knowing the query IDs at the start.
+The client optimistically sends a query ID to the server, which does not have the query map. The server then in turn requests
 for the full query text from the client so it can cache the query map for subsequent requests. This is a more complex approach
 requiring the client and server to interact to exchange the query maps.
 
